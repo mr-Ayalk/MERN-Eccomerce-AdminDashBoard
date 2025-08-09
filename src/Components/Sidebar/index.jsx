@@ -9,7 +9,7 @@ const Sidebar = () => {
           <Link to="/">
             {/* <img src="" alt="" /> */}
             <Logo
-              className="text-emerald-600"
+              className="text-emerald-950"
               spanDesign="group-hover:text-[#063c28] "
             />
           </Link>
