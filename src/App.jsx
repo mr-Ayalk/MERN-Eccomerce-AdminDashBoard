@@ -1,6 +1,8 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Dashboard from "./Pages/Dashboard";
+
 import "./App.css";
+import Header from "./Components/Header";
+import Sidebar from "./Components/Sidebar";
 function App() {
   const router = createBrowserRouter([
     {
@@ -8,7 +10,14 @@ function App() {
       exact: true,
       element: (
         <>
-          <Dashboard />
+          <section className="main">
+            <Header />
+            <div className="containerMain flex">
+              <div className="sidebarWrapper">
+                <Sidebar className="w-[25%]" />
+              </div>
+            </div>
+          </section>
         </>
       ),
     },
