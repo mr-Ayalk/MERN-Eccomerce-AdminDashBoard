@@ -25,3 +25,8 @@ body {
 .btn-blue:hover {
   background: #3066e58a !important ;
 }
+
+th.MuiTableCell-root {
+  @apply bg-[#f1f1f1];
+  padding: 1 0 1 0;
+}
