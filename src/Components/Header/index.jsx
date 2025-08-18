@@ -1,5 +1,5 @@
 import { Button } from "@mui/material";
-import { RiMenu2Line } from "react-icons/ri";
+
 import Badge from "@mui/material/Badge";
 import { styled } from "@mui/material/styles";
 import IconButton from "@mui/material/IconButton";
@@ -11,6 +11,7 @@ import { useContext, useState } from "react";
 import { IoMdLogOut } from "react-icons/io";
 import { MyContext } from "../../App";
 import { AiOutlineMenuFold, AiOutlineMenuUnfold } from "react-icons/ai";
+import { Link } from "react-router-dom";
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
   "& .MuiBadge-badge": {
@@ -146,7 +147,9 @@ const Header = () => {
             </Menu>
           </div>
         ) : (
-          <Button className="btn-blue btn-sm !rounded-full">Sign In</Button>
+          <Link to="/login">
+            <Button className="btn-blue btn-sm !rounded-full">Sign In</Button>
+          </Link>
         )}
       </div>
     </header>

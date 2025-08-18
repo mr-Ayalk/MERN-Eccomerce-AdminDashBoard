@@ -919,7 +919,6 @@ const Dashboard = () => {
           <Area
             type="monotone"
             dataKey="TotalUsers"
-          
             stroke="#8884d8"
             fill="#8884d8"
           />
