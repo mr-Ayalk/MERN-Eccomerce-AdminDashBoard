@@ -1,6 +1,5 @@
 body {
   font-family: "Montserrat", serif;
-  background: #f1f1f1;
 }
 
 .MuiBadge-badge {
@@ -32,6 +31,11 @@ body {
 }
 .btn-sm {
   padding: 6px 20px !important;
+  font-size: 13px !important;
+}
+.btn-lg {
+  padding: 8px 20px !important;
+  font-size: 16px !important;
 }
 th.MuiTableCell-root {
   @apply bg-[#f1f1f1];
@@ -39,4 +43,15 @@ th.MuiTableCell-root {
 }
 .btn svg {
   font-size: 22px;
+}
+
+a.active button {
+  background: rgba(128, 128, 128, 0.555) !important;
+}
+
+.MuiButton-icon svg {
+  font-size: 25px !important;
+}
+.css-rizt0-MuiTypography-root {
+  font-size: 14px !important;
 }

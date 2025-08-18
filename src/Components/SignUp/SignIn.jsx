@@ -7,7 +7,7 @@ import { FaEyeSlash, FaRegEye, FaRegUser } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { BsFacebook } from "react-icons/bs";
 import { Checkbox } from "@mui/material";
-const Login = () => {
+const SignUp = () => {
   const [loadingGoogle, setLoadingGoogle] = useState(false);
   const [loadingFacebook, setLoadingFacebook] = useState(false);
 
@@ -55,10 +55,11 @@ const Login = () => {
           />
         </div>
         <h1 className="text-center text-[35px] font-[800] mt-4">
-          Welcome Back !<br />
+          Join us today !<br />
           <span className="text-blue-600 text-[30px]">
             {" "}
-            Sign in with your credentials
+            Get special benefits and stay
+            <br /> up-to-date
           </span>
         </h1>{" "}
         <div className="flex items-center justify-center w-full mt-5 gap-4">
@@ -98,6 +99,13 @@ const Login = () => {
         <br />
         <form action="" className="w-full px-8 mt-3">
           <div className="form-group mb-4 w-full">
+            <h4 className="text-[14px] font-[500] mb-1">Full Name</h4>
+            <input
+              type="text"
+              className="w-full h-[50px] border-2 border-[rgba(0,0,0,0.1)] rounded-md focus:border-[rgba(0,0,0,0.7)] focus:outline-none px-3"
+            />
+          </div>
+          <div className="form-group mb-4 w-full">
             <h4 className="text-[14px] font-[500] mb-1">Email</h4>
             <input
               type="email"
@@ -130,17 +138,17 @@ const Login = () => {
               label="Remember Me"
             />
             <Link
-              to={"/forgot-password"}
+              to={"/login"}
               className="text-blue-600 font-[700] text-[15px] hover:underline hover:text-gray-700"
             >
-              Forgot Password
+              Already have an Account
             </Link>
           </div>
-          <Button className="btn-blue btn-lg w-full ">Sign In</Button>
+          <Button className="btn-blue btn-lg w-full ">Sign Up</Button>
         </form>
       </div>
     </section>
   );
 };
 
-export default Login;
+export default SignUp;
