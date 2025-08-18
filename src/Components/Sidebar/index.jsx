@@ -9,9 +9,12 @@ import { TbCategory } from "react-icons/tb";
 import { IoBagCheckOutline } from "react-icons/io5";
 import { IoMdLogOut } from "react-icons/io";
 import { Collapse } from "react-collapse";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { MyContext } from "../../App";
 
 const Sidebar = () => {
+  const context = useContext(MyContext);
+
   const [submenuIndex, setSubmenuIndex] = useState(null);
   const isOpenSubMenu = (index) => {
     if (submenuIndex === index) {
@@ -22,7 +25,11 @@ const Sidebar = () => {
   };
   return (
     <>
-      <div className="sidebar fixed top-0 left-0 bg-[#fff] w-[18%] h-full border-r border-[rgba(0,0,0,0.1)] py-2 px-2">
+      <div
+        className={`sidebar fixed top-0 left-0 bg-[#fff] h-full border-r border-[rgba(0,0,0,0.1)] py-2 px-2 
+  transition-all duration-500 ease-in-out 
+  ${context.isSidebarOpen ? "w-[18%] " : "w-0 overflow-hidden !px-0"}`}
+      >
         <div className="py-2 w-full">
           <Link to="/">
             {/* <img src="" alt="" /> */}
@@ -34,7 +41,7 @@ const Sidebar = () => {
         </div>
 
         <ul className="mt-4">
-          <li>
+          <abebe>
             <Link to="/">
               {" "}
               <Button className="w-full !justify-start flex gap-3 text-[14px] !text-[rgba(0,0,0,0.8)] !font-[500] items-center !py-2 hover:!bg[#f1f1f1]">
@@ -42,7 +49,7 @@ const Sidebar = () => {
                 <span>Dashboard</span>
               </Button>
             </Link>
-          </li>
+          </abebe>
           <li>
             <Link to="/">
               {" "}

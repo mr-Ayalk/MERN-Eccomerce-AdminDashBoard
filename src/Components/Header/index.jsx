@@ -7,8 +7,9 @@ import { FaRegBell, FaRegUser } from "react-icons/fa";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import Divider from "@mui/material/Divider";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { IoMdLogOut } from "react-icons/io";
+import { MyContext } from "../../App";
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
   "& .MuiBadge-badge": {
@@ -27,10 +28,20 @@ const Header = () => {
   const handleCloseMyAcc = () => {
     setAnchorMyAcc(null);
   };
+
+  const context = useContext(MyContext);
+
   return (
-    <header className="w-full h-[auto] py-2   pl-64 pr-7 shadow-md bg-[#fff flex items-center justify-between">
+    <header
+      className={`w-full h-auto py-2 pr-7 shadow-md bg-[#fff] flex items-center justify-between 
+  transition-all duration-500 ease-in-out 
+  ${context.isSidebarOpen ? "pl-64" : "pl-5"}`}
+    >
       <div className="part1">
-        <Button className="!w-[40px] !h-[40px] !rounded-full !min-w-[40px] !text-[rgba(0,0,0,0.8)] ">
+        <Button
+          className="!w-[40px] !h-[40px] !rounded-full !min-w-[40px] !text-[rgba(0,0,0,0.8)] "
+          onClick={() => context.setIsSidebarOpen(!context.isSidebarOpen)}
+        >
           <RiMenu2Line className="text-[18px] text-[rgba(0,0,0,0.8)]" />
         </Button>
       </div>
