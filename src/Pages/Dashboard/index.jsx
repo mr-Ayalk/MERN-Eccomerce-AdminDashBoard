@@ -11,6 +11,8 @@ import Progress from "../../Components/ProgressBar";
 import { AiOutlineEdit } from "react-icons/ai";
 import Tooltip from "@mui/material/Tooltip";
 import Pagination from "@mui/material/Pagination";
+import Select from "@mui/material/Select";
+import MenuItem from "@mui/material/MenuItem";
 
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
@@ -19,6 +21,7 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TablePagination from "@mui/material/TablePagination";
 import TableRow from "@mui/material/TableRow";
+import { BiExport } from "react-icons/bi";
 
 const columns = [
   // {
@@ -51,15 +54,14 @@ const columns = [
   },
 ];
 
-function createData(name, code, population, size) {
-  const density = population / size;
-  return { name, code, population, size, density };
-}
-
-const rows = [createData("India", "IN", 1324171354, 3287263)];
-
 const label = { inputProps: { "aria-label": "Checkbox demo" } };
 const Dashboard = () => {
+  const [category, setCategory] = useState("");
+
+  const handleChange = (event) => {
+    setCategory(event.target.value);
+  };
+
   const [isOpenOrderedProduct, setIsOpenOrderedProduct] = useState(null);
 
   const isShowOrderedProduct = (index) => {
@@ -110,6 +112,40 @@ const Dashboard = () => {
             Products
             <span className="font-[400] text-[14px]">(Tailwind Css Table)</span>
           </h2>
+        </div>
+
+        <div className="flex items-center w-full pl-5 justify-between pr-5">
+          <div className="col w-[20%]">
+            <h4 className="font-[600] text-[13px] mb-2">Category By</h4>
+            <Select
+              size="small"
+              className="w-full"
+              labelId="demo-simple-select-helper-label"
+              id="demo-simple-select-helper"
+              value={category}
+              label="Category"
+              onChange={handleChange}
+            >
+              <MenuItem value="">
+                <em>None</em>
+              </MenuItem>
+              <MenuItem value={10}>Men</MenuItem>
+              <MenuItem value={20}>Women</MenuItem>
+              <MenuItem value={30}>Kids</MenuItem>
+            </Select>
+          </div>
+
+          <div className="col w-[30%] ml-auto flex items-center gap-3">
+            <Button className="btn !bg-green-600 !text-white btn-sm">
+              <BiExport />
+              Export
+            </Button>
+            <Button className="btn-blue !text-white btn-sm">
+              {" "}
+              <FaPlus />
+              Add Product
+            </Button>
+          </div>
         </div>
 
         <div className="relative overflow-x-auto mt-5 pb-5">
@@ -309,7 +345,39 @@ const Dashboard = () => {
             <span className="font-[400] text-[14px]">(Material Ui Table)</span>
           </h2>
         </div>
+        <div className="flex items-center w-full pl-5 justify-between pr-5">
+          <div className="col w-[20%]">
+            <h4 className="font-[600] text-[13px] mb-2">Category By</h4>
+            <Select
+              size="small"
+              className="w-full"
+              labelId="demo-simple-select-helper-label"
+              id="demo-simple-select-helper"
+              value={category}
+              label="Category"
+              onChange={handleChange}
+            >
+              <MenuItem value="">
+                <em>None</em>
+              </MenuItem>
+              <MenuItem value={10}>Men</MenuItem>
+              <MenuItem value={20}>Women</MenuItem>
+              <MenuItem value={30}>Kids</MenuItem>
+            </Select>
+          </div>
 
+          <div className="col w-[30%] ml-auto flex items-center gap-3">
+            <Button className="btn !bg-green-600 !text-white btn-sm">
+              <BiExport />
+              Export
+            </Button>
+            <Button className="btn-blue !text-white btn-sm">
+              {" "}
+              <FaPlus />
+              Add Product
+            </Button>
+          </div>
+        </div>
         <TableContainer sx={{ maxHeight: 440 }}>
           <Table stickyHeader aria-label="sticky table">
             <TableHead>
@@ -408,7 +476,7 @@ const Dashboard = () => {
         <TablePagination
           rowsPerPageOptions={[10, 25, 100]}
           component="div"
-          count={rows.length}
+          count={10}
           rowsPerPage={rowsPerPage}
           page={page}
           onPageChange={handleChangePage}

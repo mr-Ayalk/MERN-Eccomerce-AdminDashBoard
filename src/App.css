@@ -17,6 +17,10 @@ body {
 ::-webkit-scrollbar-thumb {
   background: #ccc !important;
 }
+
+.btn {
+  padding: 8px 20px !important;
+}
 .btn-blue {
   background: #3872fa !important;
   color: #fff !important;
@@ -24,9 +28,15 @@ body {
 }
 .btn-blue:hover {
   background: #3066e58a !important ;
+  font: size -13px !important;
 }
-
+.btn-sm {
+  padding: 6px 20px !important;
+}
 th.MuiTableCell-root {
   @apply bg-[#f1f1f1];
   padding: 1 0 1 0;
+}
+.btn svg {
+  font-size: 22px;
 }
