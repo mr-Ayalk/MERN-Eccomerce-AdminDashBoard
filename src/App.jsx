@@ -28,16 +28,14 @@ function App() {
               </div> */}
               <div
                 className={`overflow-hidden sidebarWrapper transition-all duration-500 ease-in-out 
-    ${isSidebarOpen ? "w-[18%] " : "w-[0%] px-0"}`}
+    ${isSidebarOpen ? "w-[18%] " : "w-[0%] px-0 opacity-0"}`}
               >
                 <Sidebar />
               </div>
 
               <div
-                className={`contentRight py-4 px-5 ${
-                  isSidebarOpen
-                    ? "w-[82%]"
-                    : "w-[100%] transition-all duration-500 ease-in-out"
+                className={`contentRight py-4 px-5 transition-all duration-500 ease-in-out ${
+                  isSidebarOpen ? "w-[82%] " : "w-[100%] "
                 }`}
               >
                 <Dashboard />

@@ -10,6 +10,7 @@ import Divider from "@mui/material/Divider";
 import { useContext, useState } from "react";
 import { IoMdLogOut } from "react-icons/io";
 import { MyContext } from "../../App";
+import { AiOutlineMenuFold, AiOutlineMenuUnfold } from "react-icons/ai";
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
   "& .MuiBadge-badge": {
@@ -42,7 +43,11 @@ const Header = () => {
           className="!w-[40px] !h-[40px] !rounded-full !min-w-[40px] !text-[rgba(0,0,0,0.8)] "
           onClick={() => context.setIsSidebarOpen(!context.isSidebarOpen)}
         >
-          <RiMenu2Line className="text-[18px] text-[rgba(0,0,0,0.8)]" />
+          {context.isSidebarOpen === true ? (
+            <AiOutlineMenuFold className="text-[18px] text-[rgba(0,0,0,0.8)]" />
+          ) : (
+            <AiOutlineMenuUnfold className="text-[18px] text-[rgba(0,0,0,0.8)]" />
+          )}
         </Button>
       </div>
 

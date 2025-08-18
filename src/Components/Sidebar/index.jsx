@@ -28,7 +28,7 @@ const Sidebar = () => {
       <div
         className={`sidebar fixed top-0 left-0 bg-[#fff] h-full border-r border-[rgba(0,0,0,0.1)] py-2 px-2 
   transition-all duration-500 ease-in-out 
-  ${context.isSidebarOpen ? "w-[18%] " : "w-0 overflow-hidden !px-0"}`}
+  ${context.isSidebarOpen ? "w-[18%] " : "w-0  overflow-hidden !px-0"}`}
       >
         <div className="py-2 w-full">
           <Link to="/">
