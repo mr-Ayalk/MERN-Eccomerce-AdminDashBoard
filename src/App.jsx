@@ -5,10 +5,11 @@ import Header from "./Components/Header";
 import Sidebar from "./Components/Sidebar";
 import Dashboard from "./Pages/Dashboard";
 import { createContext, useState } from "react";
+import Login from "./Components/Login/Login";
 const MyContext = createContext();
 function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
-
+  const [isLogin, setIslogin] = useState(false);
   const router = createBrowserRouter([
     {
       path: "/",
@@ -17,7 +18,6 @@ function App() {
           <section className="main">
             <Header />
             <div className="contentMain flex">
-             
               <div
                 className={`overflow-hidden sidebarWrapper transition-all duration-500 ease-in-out 
     ${isSidebarOpen ? "w-[18%] " : "w-[0%] px-0 opacity-0"}`}
@@ -37,11 +37,18 @@ function App() {
         </MyContext.Provider>
       ),
     },
+    {
+      path: "/login",
+      exact: true,
+      element: <Login />,
+    },
   ]);
 
   const values = {
     isSidebarOpen,
     setIsSidebarOpen,
+    isLogin,
+    setIslogin,
   };
 
   return (

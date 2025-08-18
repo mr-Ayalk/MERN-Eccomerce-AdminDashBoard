@@ -41,7 +41,7 @@ const Sidebar = () => {
         </div>
 
         <ul className="mt-4">
-          <abebe>
+          <li>
             <Link to="/">
               {" "}
               <Button className="w-full !justify-start flex gap-3 text-[14px] !text-[rgba(0,0,0,0.8)] !font-[500] items-center !py-2 hover:!bg[#f1f1f1]">
@@ -49,7 +49,7 @@ const Sidebar = () => {
                 <span>Dashboard</span>
               </Button>
             </Link>
-          </abebe>
+          </li>
           <li>
             <Link to="/">
               {" "}
