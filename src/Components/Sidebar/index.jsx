@@ -227,11 +227,13 @@ const Sidebar = () => {
             </Link>
           </li>
           <li>
-            <Link to="/"></Link>
-            <Button className="w-full !justify-start flex gap-3 text-[14px] !text-[rgba(0,0,0,0.8)] !font-[500] items-center !py-2 hover:!bg[#f1f1f1]">
-              <IoMdLogOut className="text-[20px]" />
-              <span>Logout</span>
-            </Button>
+            <Link to="/login">
+              {" "}
+              <Button className="w-full !justify-start flex gap-3 text-[14px] !text-[rgba(0,0,0,0.8)] !font-[500] items-center !py-2 hover:!bg[#f1f1f1]">
+                <IoMdLogOut className="text-[20px]" />
+                <span>Logout</span>
+              </Button>
+            </Link>
           </li>
         </ul>
       </div>
