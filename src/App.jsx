@@ -23,6 +23,10 @@ import { IoMdClose } from "react-icons/io";
 import { Button } from "@mui/material";
 import HomeSliderBanners from "./Pages/HomeSliderBanners";
 import AddHomeSlide from "./Pages/HomeSliderBanners/AddHomeSlide";
+import Category from "./Pages/Category";
+import AddCategory from "./Pages/Category/AddCategory";
+import SubCategoryList from "./Pages/Category/SubCategoryList";
+import AddSubCategory from "./Pages/Category/AddSubCategory";
 
 const Transition = forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
@@ -125,6 +129,60 @@ function App() {
         // </MyContext.Provider>
       ),
     },
+    {
+      path: "/category/list",
+      exact: true,
+      element: (
+        // <MyContext.Provider value={{ isSidebarOpen, setIsSidebarOpen }}>
+        <section className="main">
+          <Header />
+          <div className="contentMain flex">
+            <div
+              className={`overflow-hidden sidebarWrapper transition-all duration-500 ease-in-out 
+    ${isSidebarOpen ? "w-[18%] " : "w-[0%] px-0 opacity-0"}`}
+            >
+              <Sidebar />
+            </div>
+
+            <div
+              className={`contentRight !bg-gray-50 py-4 px-5 transition-all duration-500 ease-in-out ${
+                isSidebarOpen ? "w-[82%] " : "w-[100%] "
+              }`}
+            >
+              <Category />
+            </div>
+          </div>
+        </section>
+        // </MyContext.Provider>
+      ),
+    },
+    {
+      path: "/subcategory/list",
+      exact: true,
+      element: (
+        // <MyContext.Provider value={{ isSidebarOpen, setIsSidebarOpen }}>
+        <section className="main">
+          <Header />
+          <div className="contentMain flex">
+            <div
+              className={`overflow-hidden sidebarWrapper transition-all duration-500 ease-in-out 
+    ${isSidebarOpen ? "w-[18%] " : "w-[0%] px-0 opacity-0"}`}
+            >
+              <Sidebar />
+            </div>
+
+            <div
+              className={`contentRight !bg-gray-50 py-4 px-5 transition-all duration-500 ease-in-out ${
+                isSidebarOpen ? "w-[82%] " : "w-[100%] "
+              }`}
+            >
+              <SubCategoryList />
+            </div>
+          </div>
+        </section>
+        // </MyContext.Provider>
+      ),
+    },
   ]);
 
   const values = {
@@ -178,6 +236,12 @@ function App() {
           {isOpenFullScreenPanel?.model === "Add Product" && <AddProduct />}
           {isOpenFullScreenPanel?.model === "Add Home Slide" && (
             <AddHomeSlide />
+          )}
+          {isOpenFullScreenPanel?.model === "Add New Category" && (
+            <AddCategory />
+          )}
+          {isOpenFullScreenPanel?.model === "Add New Sub Category" && (
+            <AddSubCategory />
           )}
         </Dialog>
       </MyContext.Provider>

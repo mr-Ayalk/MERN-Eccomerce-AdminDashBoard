@@ -4,11 +4,25 @@ import "react-lazy-load-image-component/src/effects/blur.css";
 import { IoMdClose } from "react-icons/io";
 import { Button } from "@mui/material";
 import { FaCloudUploadAlt } from "react-icons/fa";
-const AddHomeSlide = () => {
+const AddCategory = () => {
   return (
     <section className="p-5 px-20 bg-gray-50  overflow-hidden">
       <form action="" className="form p-8 py-3 ">
         <div className="scroll max-h-[75vh] overflow-y-scroll pr-4 pt-3">
+          <div className="col  w-1/4">
+            <h3 className="text-[14px] font-[500] mb-1 !text-black">
+              Category Name
+            </h3>
+
+            <input
+              type="text"
+              className="w-full h-[40px] border border-[rgba(0,0,0,0.3)] focus:outline-none focus:border-blue-600 rounded-sm p-3 text-sm bg-white "
+            />
+          </div>
+          <br />
+          <h3 className="text-[18px] font-[500] mb-1 !text-black">
+            Category Image
+          </h3>
           <div className="grid grid-cols-6 gap-4">
             <div className="uploadBoxWrapper relative">
               <span className="absolute w-[20px] h-[20px] rounded-full overflow-hidden bg-red-700 -top-[5px] -right-[5px] flex items-center justify-center z-50 cursor-pointer">
@@ -48,4 +62,4 @@ const AddHomeSlide = () => {
   );
 };
 
-export default AddHomeSlide;
+export default AddCategory;
