@@ -51,36 +51,44 @@ const Sidebar = () => {
             </Link>
           </li>
           <li>
-            <Link to="/">
-              {" "}
-              <Button
-                className="w-full !justify-start flex gap-3 text-[14px] !text-[rgba(0,0,0,0.8)] !font-[500] items-center !py-2 hover:!bg[#f1f1f1]"
-                onClick={() => isOpenSubMenu(1)}
-              >
-                <FaRegImage className="text-[20px]" />
-                <span>Home Slides</span>
-                <span className="ml-auto flex items-center justify-center w-[30px] h-[30px]">
-                  <FaAngleDown
-                    className={`text-[16px] font-extralight transition-all ${
-                      submenuIndex === 1 ? "rotate-180" : ""
-                    }`}
-                  />
-                </span>
-              </Button>
-            </Link>
+            <Button
+              className="w-full !justify-start flex gap-3 text-[14px] !text-[rgba(0,0,0,0.8)] !font-[500] items-center !py-2 hover:!bg[#f1f1f1]"
+              onClick={() => isOpenSubMenu(1)}
+            >
+              <FaRegImage className="text-[20px]" />
+              <span>Home Slides</span>
+              <span className="ml-auto flex items-center justify-center w-[30px] h-[30px]">
+                <FaAngleDown
+                  className={`text-[16px] font-extralight transition-all ${
+                    submenuIndex === 1 ? "rotate-180" : ""
+                  }`}
+                />
+              </span>
+            </Button>
 
             <Collapse isOpened={submenuIndex === 1 ? true : false}>
               <ul className="w-full">
                 <li className="w-full">
-                  <Button className="!text-[rgba(0,0,0,0.6)] !capitalize !justify-start !w-full !text-[13px] !font-[500] !pl-9 flex gap-3">
-                    <span className="block w-[5px] h-[5px] rounded-full bg-[rgba(0,0,0,0.2)]">
-                      {" "}
-                    </span>{" "}
-                    Home Banner List
-                  </Button>
+                  <Link to="/homeSlider/list">
+                    {" "}
+                    <Button className="!text-[rgba(0,0,0,0.6)] !capitalize !justify-start !w-full !text-[13px] !font-[500] !pl-9 flex gap-3">
+                      <span className="block w-[5px] h-[5px] rounded-full bg-[rgba(0,0,0,0.2)]">
+                        {" "}
+                      </span>{" "}
+                      Home Banner List
+                    </Button>
+                  </Link>
                 </li>
                 <li className="w-full">
-                  <Button className="!text-[rgba(0,0,0,0.6)] !capitalize !justify-start w-full !text-[13px] !font-[500] !pl-9 flex gap-3">
+                  <Button
+                    className="!text-[rgba(0,0,0,0.6)] !capitalize !justify-start w-full !text-[13px] !font-[500] !pl-9 flex gap-3"
+                    onClick={() =>
+                      context.setIsOpenFullScreenPanel({
+                        open: true,
+                        model: "Add Home Slide",
+                      })
+                    }
+                  >
                     <span className="block w-[5px] h-[5px] rounded-full bg-[rgba(0,0,0,0.2)]"></span>{" "}
                     Add Home Banner Slide
                   </Button>

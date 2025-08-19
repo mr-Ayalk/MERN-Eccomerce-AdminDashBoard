@@ -21,6 +21,8 @@ import Typography from "@mui/material/Typography";
 import Slide from "@mui/material/Slide";
 import { IoMdClose } from "react-icons/io";
 import { Button } from "@mui/material";
+import HomeSliderBanners from "./Pages/HomeSliderBanners";
+import AddHomeSlide from "./Pages/HomeSliderBanners/AddHomeSlide";
 
 const Transition = forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
@@ -97,12 +99,32 @@ function App() {
         // </MyContext.Provider>
       ),
     },
+    {
+      path: "/homeSlider/list",
+      element: (
+        // <MyContext.Provider value={{ isSidebarOpen, setIsSidebarOpen }}>
+        <section className="main">
+          <Header />
+          <div className="contentMain flex">
+            <div
+              className={`overflow-hidden sidebarWrapper transition-all duration-500 ease-in-out 
+    ${isSidebarOpen ? "w-[18%] " : "w-[0%] px-0 opacity-0"}`}
+            >
+              <Sidebar />
+            </div>
 
-    // {
-    //   path: "/products/upload",
-    //   exact: true,
-    //   element: <AddProduct />,
-    // },
+            <div
+              className={`contentRight !bg-gray-50 py-4 px-5 transition-all duration-500 ease-in-out ${
+                isSidebarOpen ? "w-[82%] " : "w-[100%] "
+              }`}
+            >
+              <HomeSliderBanners />
+            </div>
+          </div>
+        </section>
+        // </MyContext.Provider>
+      ),
+    },
   ]);
 
   const values = {
@@ -154,6 +176,9 @@ function App() {
           </AppBar>
 
           {isOpenFullScreenPanel?.model === "Add Product" && <AddProduct />}
+          {isOpenFullScreenPanel?.model === "Add Home Slide" && (
+            <AddHomeSlide />
+          )}
         </Dialog>
       </MyContext.Provider>
     </>

@@ -250,7 +250,7 @@ const AddProduct = () => {
           <div className="col w-full p-5 px-0">
             <h3 className="font-[700] text-[18px] mb-3">Media & Images</h3>
 
-            <div className="grid grid-cols-7 gap-4">
+            <div className="grid grid-cols-6 gap-4">
               <div className="uploadBoxWrapper relative">
                 <span className="absolute w-[20px] h-[20px] rounded-full overflow-hidden bg-red-700 -top-[5px] -right-[5px] flex items-center justify-center z-50 cursor-pointer">
                   <IoMdClose className="text-white text-[17px]" />
