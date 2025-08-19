@@ -1,4 +1,4 @@
-import { useState, PureComponent } from "react";
+import { useState, PureComponent, useContext } from "react";
 import DashboardBoxes from "../../Components/DashboardBoxes";
 import superMarketImage from "../../Assets/supermarket.png";
 import { FaPlus, FaRegEye, FaTrash } from "react-icons/fa";
@@ -35,6 +35,7 @@ import {
   Area,
 } from "recharts";
 import LineChart1 from "../../Components/LineChart/LineChart";
+import { MyContext } from "../../App";
 const columns = [
   // {
   //   id: "id",
@@ -140,7 +141,9 @@ const data = [
   },
 ];
 const label = { inputProps: { "aria-label": "Checkbox demo" } };
+
 const Dashboard = () => {
+  const context = useContext(MyContext);
   const [category, setCategory] = useState("");
 
   const handleChange = (event) => {
@@ -180,7 +183,15 @@ const Dashboard = () => {
             Praesentium nemo cum neque repellat cupiditate id.
           </p>
           <br />
-          <Button className="btn-blue !capitalize">
+          <Button
+            className="btn-blue !capitalize"
+            onClick={() =>
+              context.setIsOpenFullScreenPanel({
+                open: true,
+                model: "Add Product",
+              })
+            }
+          >
             <FaPlus /> Add Product
           </Button>
         </div>
@@ -225,7 +236,15 @@ const Dashboard = () => {
               <BiExport />
               Export
             </Button>
-            <Button className="btn-blue !text-white btn-sm">
+            <Button
+              className="btn-blue !text-white btn-sm"
+              onClick={() =>
+                context.setIsOpenFullScreenPanel({
+                  open: true,
+                  model: "Add Product",
+                })
+              }
+            >
               {" "}
               <FaPlus />
               Add Product
@@ -463,7 +482,15 @@ const Dashboard = () => {
               <BiExport />
               Export
             </Button>
-            <Button className="btn-blue !text-white btn-sm">
+            <Button
+              className="btn-blue !text-white btn-sm"
+              onClick={() =>
+                context.setIsOpenFullScreenPanel({
+                  open: true,
+                  model: "Add Product",
+                })
+              }
+            >
               {" "}
               <FaPlus />
               Add Product

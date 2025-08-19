@@ -1,5 +1,5 @@
 import { Button } from "@mui/material";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { FaPlus, FaRegEye, FaTrash } from "react-icons/fa";
 import Checkbox from "@mui/material/Checkbox";
 import { Link } from "react-router-dom";
@@ -16,8 +16,9 @@ import TableHead from "@mui/material/TableHead";
 import TablePagination from "@mui/material/TablePagination";
 import TableRow from "@mui/material/TableRow";
 import { BiExport } from "react-icons/bi";
-import { IoMdAdd } from "react-icons/io";
 import SearchBox from "../SearchBox/SearchBox";
+import { MyContext } from "../../App";
+
 const columns = [
   // {
   //   id: "id",
@@ -51,6 +52,7 @@ const columns = [
 
 const label = { inputProps: { "aria-label": "Checkbox demo" } };
 const Products = () => {
+  const context = useContext(MyContext);
   const [category, setCategory] = useState("");
 
   const handleChange = (event) => {
@@ -80,8 +82,15 @@ const Products = () => {
             <BiExport />
             Export
           </Button>
-          <Button className="btn-blue !text-white btn-sm">
-            {" "}
+          <Button
+            className="btn-blue !text-white btn-sm"
+            onClick={() =>
+              context.setIsOpenFullScreenPanel({
+                open: true,
+                model: "Add Product",
+              })
+            }
+          >
             <FaPlus />
             Add Product
           </Button>
