@@ -21,8 +21,8 @@ import { MyContext } from "../../App";
 import SearchBox from "../../Components/SearchBox/SearchBox";
 
 const columns = [
-  { id: "image", label: "CATEGORY IMAGE", minWidth: 100 },
- 
+  { id: "image", label: "CATEGORY IMAGE", minWidth: 250 },
+  { id: "catName", label: "CATEGORY NAME", minWidth: 240 },
   { id: "action", label: "ACTION", minWidth: 100 },
 ];
 
@@ -132,6 +132,8 @@ const Category = () => {
                     </div>
                   </div>
                 </TableCell>
+
+                <TableCell width={250}>Fashion</TableCell>
 
                 <TableCell style={{ minWidth: columns.minWidth }}>
                   <div className="flex items-center gap-4">

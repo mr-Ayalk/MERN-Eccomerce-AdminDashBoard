@@ -27,6 +27,7 @@ import Category from "./Pages/Category";
 import AddCategory from "./Pages/Category/AddCategory";
 import SubCategoryList from "./Pages/Category/SubCategoryList";
 import AddSubCategory from "./Pages/Category/AddSubCategory";
+import Users from "./Pages/Users/Users";
 
 const Transition = forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
@@ -177,6 +178,33 @@ function App() {
               }`}
             >
               <SubCategoryList />
+            </div>
+          </div>
+        </section>
+        // </MyContext.Provider>
+      ),
+    },
+    {
+      path: "/users",
+      exact: true,
+      element: (
+        // <MyContext.Provider value={{ isSidebarOpen, setIsSidebarOpen }}>
+        <section className="main">
+          <Header />
+          <div className="contentMain flex">
+            <div
+              className={`overflow-hidden sidebarWrapper transition-all duration-500 ease-in-out 
+    ${isSidebarOpen ? "w-[18%] " : "w-[0%] px-0 opacity-0"}`}
+            >
+              <Sidebar />
+            </div>
+
+            <div
+              className={`contentRight !bg-gray-50 py-4 px-5 transition-all duration-500 ease-in-out ${
+                isSidebarOpen ? "w-[82%] " : "w-[100%] "
+              }`}
+            >
+              <Users />
             </div>
           </div>
         </section>
