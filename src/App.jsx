@@ -64,7 +64,7 @@ function App() {
               </div>
 
               <div
-                className={`contentRight py-4 px-5 transition-all duration-500 ease-in-out ${
+                className={`contentRight !bg-gray-50 py-4 px-5 transition-all duration-500 ease-in-out ${
                   isSidebarOpen ? "w-[82%] " : "w-[100%] "
                 }`}
               >

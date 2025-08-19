@@ -17,6 +17,7 @@ import TablePagination from "@mui/material/TablePagination";
 import TableRow from "@mui/material/TableRow";
 import { BiExport } from "react-icons/bi";
 import { IoMdAdd } from "react-icons/io";
+import SearchBox from "../SearchBox/SearchBox";
 const columns = [
   // {
   //   id: "id",
@@ -69,25 +70,28 @@ const Products = () => {
   };
   return (
     <>
-      <div className="card bg-white shadow-md rounded-md  p-5 flex items-center justify-between">
-        <h1 className="font-[700] text-[20px] text-gray-800">Products</h1>
-        <Button className="btn-blue btn-sm ml-auto">
-          <IoMdAdd className="text-white text-[20px]" />
-          Add Product
-        </Button>
+      <div className="flex items-center justify-between px-2 py-0 mt-3">
+        <h2 className="text-[18px] font-[600]">
+          Products
+          <span className="font-[400] text-[14px]">(Material Ui Table)</span>
+        </h2>
+        <div className="col w-[30%] ml-auto flex items-center justify-end gap-3">
+          <Button className="btn !bg-green-600 !text-white btn-sm">
+            <BiExport />
+            Export
+          </Button>
+          <Button className="btn-blue !text-white btn-sm">
+            {" "}
+            <FaPlus />
+            Add Product
+          </Button>
+        </div>
       </div>
-
       {/* ddddddddddddddddddddddddddddddd */}
 
-      <div className="card my-4 shadow-md sm:rounded-lg bg-white">
-        <div className="flex items-center justify-between px-5 py-5">
-          <h2 className="text-[18px] font-[600]">
-            Products
-            <span className="font-[400] text-[14px]">(Material Ui Table)</span>
-          </h2>
-        </div>
-        <div className="flex items-center w-full pl-5 justify-between pr-5">
-          <div className="col w-[20%]">
+      <div className="card my-4 pt-5 shadow-md sm:rounded-lg bg-white">
+        <div className="flex items-center w-full px-5 justify-between ">
+          <div className="col w-[20%] py-3">
             <h4 className="font-[600] text-[13px] mb-2">Category By</h4>
             <Select
               size="small"
@@ -107,16 +111,8 @@ const Products = () => {
             </Select>
           </div>
 
-          <div className="col w-[30%] ml-auto flex items-center gap-3">
-            <Button className="btn !bg-green-600 !text-white btn-sm">
-              <BiExport />
-              Export
-            </Button>
-            <Button className="btn-blue !text-white btn-sm">
-              {" "}
-              <FaPlus />
-              Add Product
-            </Button>
+          <div className="col w-[20%] ml-auto">
+            <SearchBox />
           </div>
         </div>
         <TableContainer sx={{ maxHeight: 440 }}>
