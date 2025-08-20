@@ -29,6 +29,8 @@ import SubCategoryList from "./Pages/Category/SubCategoryList";
 import AddSubCategory from "./Pages/Category/AddSubCategory";
 import Users from "./Pages/Users/Users";
 import Orders from "./Pages/Orders/Orders";
+import ForgotPassword from "./Components/ForgotPassword/ForgotPassword";
+import VerifyAccount from "./Components/VerifyAccount/VerifyAccount";
 
 const Transition = forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
@@ -78,6 +80,20 @@ function App() {
       path: "/signup",
       exact: true,
       element: <SignUp />,
+    },
+    {
+      path: "/forgot-password",
+      exact: true,
+      element: <ForgotPassword />,
+    },
+    {
+      path: "/verify-account",
+      exact: true,
+      element: <VerifyAccount />,
+    }, {
+      path: "/change-password",
+      exact: true,
+      element: <VerifyAccount />,
     },
     {
       path: "/products",
