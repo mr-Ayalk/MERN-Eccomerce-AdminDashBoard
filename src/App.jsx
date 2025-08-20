@@ -31,6 +31,7 @@ import Users from "./Pages/Users/Users";
 import Orders from "./Pages/Orders/Orders";
 import ForgotPassword from "./Components/ForgotPassword/ForgotPassword";
 import VerifyAccount from "./Components/VerifyAccount/VerifyAccount";
+import ChangePassword from "./Components/ChangePassword";
 
 const Transition = forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
@@ -93,7 +94,7 @@ function App() {
     }, {
       path: "/change-password",
       exact: true,
-      element: <VerifyAccount />,
+      element: <ChangePassword />,
     },
     {
       path: "/products",

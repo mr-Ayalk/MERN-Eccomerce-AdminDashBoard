@@ -76,9 +76,10 @@ const VerifyAccount = () => {
           <OtpBox length={6} onChange={handleOtpChange} />
 
           <div className="flex items-center justify-center mt-5 px-3">
-            <Button type="submit" className="w-full btn-blue btn-lg">
+            <Link to="/change-password"> <Button type="submit" className="w-full btn-blue btn-lg">
               Verify OTP
-            </Button>
+            </Button></Link>
+           
           </div>
         </form>
       </div>
