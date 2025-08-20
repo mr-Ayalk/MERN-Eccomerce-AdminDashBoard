@@ -3,7 +3,6 @@ import { useContext, useState } from "react";
 import { FaPlus, FaRegEye, FaTrash } from "react-icons/fa";
 import Checkbox from "@mui/material/Checkbox";
 import { Link } from "react-router-dom";
-import Progress from "../../Components/ProgressBar";
 import { AiOutlineEdit } from "react-icons/ai";
 import Tooltip1 from "@mui/material/Tooltip";
 import Select from "@mui/material/Select";
@@ -72,7 +71,7 @@ const Category = () => {
           </Button>
         </div>
       </div>
-      {/* ddddddddddddddddddddddddddddddd */}
+   
 
       <div className="card my-4 pt-5 shadow-md sm:rounded-lg bg-white">
         <div className="flex items-center w-full px-5 justify-between ">
@@ -174,7 +173,7 @@ const Category = () => {
         />
       </div>
 
-      {/* ffffffffffffffffffffffffffffffffffffffff */}
+     
     </>
   );
 };

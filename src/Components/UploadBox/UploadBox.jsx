@@ -1,4 +1,4 @@
-import React from "react";
+
 import { FaRegImages } from "react-icons/fa";
 
 const UploadBox = (props) => {

@@ -1,12 +1,10 @@
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import Logo from "../Logo";
-import { Button, FormControlLabel } from "@mui/material";
+import { Button } from "@mui/material";
 import { CgLogIn } from "react-icons/cg";
-import { FaEyeSlash, FaRegEye, FaRegUser } from "react-icons/fa";
-import { FcGoogle } from "react-icons/fc";
-import { BsFacebook } from "react-icons/bs";
-import { Checkbox } from "@mui/material";
+import {  FaRegUser } from "react-icons/fa";
+
 import OtpBox from "../OtpBox/OtpBox";
 const VerifyAccount = () => {
   const [otp, setOtp] = useState("");
@@ -44,7 +42,7 @@ const VerifyAccount = () => {
           </NavLink>
         </div>
       </header>
-      {/* <img src="" alt="" className="w-full fixed top-0 left-0 opacity-0" /> */}
+     
 
       <div className="loginBox card w-[45%] h-auto pb-20  mx-auto mt-20 relative z-50 border-2 border-gray-200 rounded-3xl shadow-md">
         <div className="text-center flex items-center justify-center rounded-full">

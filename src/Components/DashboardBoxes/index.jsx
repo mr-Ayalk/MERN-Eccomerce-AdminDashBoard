@@ -1,12 +1,12 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Navigation } from "swiper/modules"; // ✅ import actual modules
+import { Navigation } from "swiper/modules"; 
 
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { AiTwotoneGift, AiTwotonePieChart } from "react-icons/ai";
 import { IoStatsChartSharp } from "react-icons/io5";
-import { BsBank, BsBank2 } from "react-icons/bs";
+import {  BsBank2 } from "react-icons/bs";
 import { RiProductHuntLine } from "react-icons/ri";
 
 const DashboardBoxes = () => {
@@ -15,10 +15,9 @@ const DashboardBoxes = () => {
       spaceBetween={10}
       slidesPerView={4}
       autoplay={{ delay: 2500, disableOnInteraction: false }}
-      // pagination={{ clickable: true }}
-      //   pagination={{ clickable: true }}
+    
       navigation={true}
-      modules={[Navigation]} // ✅ pass modules, not strings
+      modules={[Navigation]} 
       className="dashboardBoxesSlider"
     >
       <SwiperSlide>

@@ -73,7 +73,7 @@ const SubCategoryList = () => {
           </Button>
         </div>
       </div>
-      {/* ddddddddddddddddddddddddddddddd */}
+   
 
       <div className="card my-4 pt-5 shadow-md sm:rounded-lg bg-white">
         <div className="flex items-center w-full px-5 justify-between ">
@@ -173,7 +173,7 @@ const SubCategoryList = () => {
         />
       </div>
 
-      {/* ffffffffffffffffffffffffffffffffffffffff */}
+     
     </>
   );
 };

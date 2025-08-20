@@ -45,7 +45,7 @@ const SignUp = () => {
           </NavLink>
         </div>
       </header>
-      {/* <img src="" alt="" className="w-full fixed top-0 left-0 opacity-0" /> */}
+  
 
       <div className="loginBox card w-[45%] h-auto pb-20  mx-auto mt-20 relative z-50 border-2 border-gray-200 rounded-3xl shadow-md">
         <div className="text-center mx-auto">

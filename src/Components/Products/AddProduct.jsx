@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import InputLabel from "@mui/material/InputLabel";
+import  { useState } from "react";
+
 import MenuItem from "@mui/material/MenuItem";
-import FormControl from "@mui/material/FormControl";
+
 import Select from "@mui/material/Select";
 import Rating from "@mui/material/Rating";
 import UploadBox from "../UploadBox/UploadBox";

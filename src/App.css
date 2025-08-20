@@ -75,3 +75,6 @@ a.active button {
   height: 90vh;
   display: flex;
 }
+.MuiTableBody-root tr:nth-child(even) {
+  @apply bg-gray-50;
+}

@@ -71,8 +71,7 @@ const HomeSliderBanners = () => {
           </Button>
         </div>
       </div>
-      {/* ddddddddddddddddddddddddddddddd */}
-
+     
       <div className="card my-4 pt-5 shadow-md sm:rounded-lg bg-white">
         <div className="flex items-center w-full px-5 justify-between ">
           <div className="col w-[20%] py-3">
@@ -171,7 +170,7 @@ const HomeSliderBanners = () => {
         />
       </div>
 
-      {/* ffffffffffffffffffffffffffffffffffffffff */}
+  
     </>
   );
 };
